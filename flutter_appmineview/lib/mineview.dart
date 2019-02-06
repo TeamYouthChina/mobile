@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 
 class mineview extends StatefulWidget{
   @override
@@ -47,13 +48,13 @@ class mineviewstate extends State<mineview>{
 //                  leading: new Icon(Icons.call_to_action),
                   title: new Center(child: new Text("个人主页")) ,
                   onTap: (){
-//                    Navigator.of(context).push(
-//                        new MaterialPageRoute(
-//                            builder: (context){
-//                              return new Center(child: Text('qianbao'),);
-//                            }
-//                        )
-//                    );
+                    Navigator.of(context).push(
+                        new MaterialPageRoute(
+                            builder: (context){
+                              return new HomePage();
+                            }
+                        )
+                    );
                   },
                 ),
                 color: Colors.white,
