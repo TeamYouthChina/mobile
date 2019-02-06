@@ -56,7 +56,7 @@ class RandomWordsState extends State<RandomWords>
     ),
     new BottomNavigationBarItem(
       icon: new Icon(Icons.perm_identity, color: Colors.grey),
-      title: new Text("你"),
+      title: new Text("qo"),
     ),
   ];
   final List<Widget> listtabs = [];
