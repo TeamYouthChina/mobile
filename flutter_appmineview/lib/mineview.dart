@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'HomePage.dart';
-
+import 'mineview/HomePage.dart';
 class mineview extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
