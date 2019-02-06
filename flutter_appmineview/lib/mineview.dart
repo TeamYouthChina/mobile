@@ -25,7 +25,7 @@ class mineviewstate extends State<mineview>{
                 child: new ListTile(
                   leading: new Image.asset("image/image1.jpg"),
                   title: new Text("Tony"),
-                  subtitle: new Text("影响力分值：xx会员，xx分"),
+                  subtitle: new Text("影响力分：xx会员，xx分"),
                   trailing: new Icon(Icons.fullscreen),
                   onTap: (){
 //                    Navigator.of(context).push(
