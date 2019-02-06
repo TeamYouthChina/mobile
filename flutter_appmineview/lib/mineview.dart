@@ -27,13 +27,13 @@ class mineviewstate extends State<mineview>{
                   subtitle: new Text("影响力分值：xx会员，xx分"),
                   trailing: new Icon(Icons.fullscreen),
                   onTap: (){
-//                    Navigator.of(context).push(
-//                        new MaterialPageRoute(
-//                            builder: (context){
-//                              return new Center(child: Text('tony'),);
-//                            }
-//                        )
-//                    );
+                    Navigator.of(context).push(
+                        new MaterialPageRoute(
+                            builder: (context){
+                              return new Center(child: Text('tony'),);
+                            }
+                        )
+                    );
                   },
                 ),
                 color: Colors.white,
