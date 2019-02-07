@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'mineview/HomePage.dart';
+import 'MyInfo/HomePage.dart';
 
-class mineview extends StatefulWidget{
+class MyInfoPage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return mineviewstate();
+    return MyInfoPageState();
   }
 }
 
-class mineviewstate extends State<mineview>{
+class MyInfoPageState extends State<MyInfoPage>{
   double interval=2.0;
 
   @override

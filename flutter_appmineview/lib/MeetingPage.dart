@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class homeview extends StatefulWidget{
+class MeetingPage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return homeviewstate();
+    return MeetingPageState();
   }
 }
 
-class homeviewstate extends State<homeview>{
+class MeetingPageState extends State<MeetingPage>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

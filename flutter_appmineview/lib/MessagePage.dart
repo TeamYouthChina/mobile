@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class contactview extends StatefulWidget{
+class MessagePage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return contactviewstate();
+    return MessagePageState();
   }
 }
 
-class contactviewstate extends State<contactview>{
+class MessagePageState extends State<MessagePage>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'homeview.dart';
-import 'findview.dart';
-import 'contactview.dart';
-import 'mineview.dart';
+import 'MeetingPage.dart';
+import 'ExplorePage.dart';
+import 'MessagePage.dart';
+import 'MyInfoPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -64,10 +64,10 @@ class RandomWordsState extends State<RandomWords>
 
 
   final List<StatefulWidget> vcSet = [
-    new homeview(),
-    new contactview(),
-    new findview(),
-    new mineview()
+    new MessagePage(),
+    new MeetingPage(),
+    new ExplorePage(),
+    new MyInfoPage()
   ];
   int _sindex = 0;
 

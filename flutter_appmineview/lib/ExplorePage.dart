@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'findview/question.dart';
+import 'Explore/question.dart';
 
-class findview extends StatefulWidget{
+class ExplorePage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return findviewstate();
+    return ExplorePageState();
   }
 }
 
-class findviewstate extends State<findview>{
+class ExplorePageState extends State<ExplorePage>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
