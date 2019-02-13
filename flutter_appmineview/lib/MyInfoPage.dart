@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MyInfo/HomePage.dart';
+import 'MyInfo/cyt_influence.dart';
 
 class MyInfoPage extends StatefulWidget{
   @override
