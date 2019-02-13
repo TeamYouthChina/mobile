@@ -2,35 +2,27 @@ import 'package:flutter/material.dart';
 import 'score.dart';
 
 class Question extends StatefulWidget {
-
-
   void drop() {
     _Question().dropdown();
   }
 
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _Question();
-  }
+  State<StatefulWidget> createState() => _Question();
 }
 
 class _Question extends State<Question> {
   bool dropdownbool;
   int lines;
 
-
-
   @override
   void initState() {
     dropdownbool = false;
-    lines=3;
+    lines = 3;
     super.initState();
   }
 
   @override
   void dispose() {
-
     super.dispose();
   }
 
@@ -58,10 +50,10 @@ class _Question extends State<Question> {
       margin: EdgeInsets.all(3),
       decoration: BoxDecoration(
           border: Border(
-            bottom: BorderSide(
-              color: Colors.grey,
-            ),
-          )),
+        bottom: BorderSide(
+          color: Colors.grey,
+        ),
+      )),
       child: SizedBox(
         child: Column(
           children: <Widget>[
@@ -84,7 +76,6 @@ class _Question extends State<Question> {
                           margin: const EdgeInsets.all(5.0),
                           //color: const Color(0xFF00FF00),
                         ),
-
                         Container(
                           child: Text(
                             'name of company',
@@ -93,7 +84,6 @@ class _Question extends State<Question> {
                             style: TextStyle(fontStyle: FontStyle.italic),
                           ),
                         ),
-
                       ],
                     ),
                     Row(
@@ -106,25 +96,24 @@ class _Question extends State<Question> {
                         ),
                         Expanded(
                             child: Column(
+                          children: <Widget>[
+                            Row(
                               children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Text('张家铭'),
-                                    Text('$Person.score')
-                                  ],
-                                ),
-                                Row(
-                                    children: <Widget>[
-                                      Text(
-                                        '现任员工/前任员工/实习生/--岗位名称 或者 匿名用户',
-                                        style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 0.8),
-                                        textAlign: TextAlign.start,
-                                      )
-                                    ]
-                                )
+                                Text('张家铭'),
+                                Text('$Person.score')
                               ],
-                            )
-                        )
+                            ),
+                            Row(children: <Widget>[
+                              Text(
+                                '现任员工/前任员工/实习生/--岗位名称 或者 匿名用户',
+                                style: DefaultTextStyle.of(context)
+                                    .style
+                                    .apply(fontSizeFactor: 0.8),
+                                textAlign: TextAlign.start,
+                              )
+                            ])
+                          ],
+                        ))
                       ],
                     )
                   ],
@@ -168,20 +157,19 @@ class _Question extends State<Question> {
                   ),
                   Expanded(
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            IconButton(
-                                color: color,
-                                icon: Icon(Icons.subject),
-                                onPressed: () {
-                                 this.dropdown();
-                                })
-                          ],
-                        ),
-                      )
-                  ),
+                    margin: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        IconButton(
+                            color: color,
+                            icon: Icon(Icons.subject),
+                            onPressed: () {
+                              this.dropdown();
+                            })
+                      ],
+                    ),
+                  )),
                 ],
               ),
             ),
