@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'cyt_wenda.dart';
+import 'Cyt_Wenda.dart';
 
-class cyt_influence extends StatefulWidget {
+class Cyt_Influence extends StatefulWidget {
   @override
-  _cyt_influenceState createState() => _cyt_influenceState();
+  _Cyt_InfluenceState createState() => _Cyt_InfluenceState();
 }
 
-class _cyt_influenceState extends State<cyt_influence> {
+class _Cyt_InfluenceState extends State<Cyt_Influence> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
