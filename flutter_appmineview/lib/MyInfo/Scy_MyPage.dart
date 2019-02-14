@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'search_bar.dart';
 import 'MyFocusPage.dart';
 import 'FocusMePage.dart';
+import 'cyt_influence.dart';
 
 class MyPage extends StatefulWidget {
   MyPage({Key key}) : super(key: key);
@@ -22,14 +23,14 @@ class _MyPageState extends State<MyPage> {
     return Scaffold(
       appBar: new PreferredSize(
         child: new AppBar(
-          //title: new Text('Tabbed AppBar'),
+            //title: new Text('Tabbed AppBar'),
             centerTitle: true,
             title: new SearchBar(hintText: _hintText)),
         preferredSize: Size.fromHeight(60.0),
       ),
       body: new GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: (){
+        onTap: () {
           FocusScope.of(context).requestFocus(new FocusNode());
         },
         child: new Container(
@@ -80,7 +81,8 @@ class _MyPageState extends State<MyPage> {
                             children: <Widget>[
                               new Text(_myFollowerNum.toString()),
                               new FlatButton(
-                                  onPressed: goToMyFocusPage, child: new Text('我关注'))
+                                  onPressed: goToMyFocusPage,
+                                  child: new Text('我关注'))
                             ],
                           ),
                           new Row(
@@ -88,7 +90,8 @@ class _MyPageState extends State<MyPage> {
                             children: <Widget>[
                               new Text(_FollowMeNum.toString()),
                               new FlatButton(
-                                  onPressed: goToFocusMePage, child: new Text('关注我'))
+                                  onPressed: goToFocusMePage,
+                                  child: new Text('关注我'))
                             ],
                           ),
                         ],
@@ -110,19 +113,26 @@ class _MyPageState extends State<MyPage> {
                       child: new Container(
                         height: 60.0,
                         decoration: BoxDecoration(color: Colors.white),
-                        child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            new Text(
-                              '影响力：',
-                              style: TextStyle(fontSize: 16.0),
+                        child: new ButtonTheme(
+                          minWidth: 20.0,
+                          padding: EdgeInsets.only(left: 0.0, top: 5.0),
+                          child: FlatButton(
+                            onPressed: goToinfluencepage,
+                            child: new Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                new Text(
+                                  '影响力：',
+                                  style: TextStyle(fontSize: 16.0),
+                                ),
+                                new Text(
+                                  '1009 ',
+                                  style: TextStyle(fontSize: 16.0),
+                                ),
+                                new Icon(Icons.arrow_upward)
+                              ],
                             ),
-                            new Text(
-                              '1009 ',
-                              style: TextStyle(fontSize: 16.0),
-                            ),
-                            new Icon(Icons.arrow_upward)
-                          ],
+                          ),
                         ),
                       ),
                     ),
@@ -361,7 +371,8 @@ class _MyPageState extends State<MyPage> {
             ],
           ),
         ),
-      ),);
+      ),
+    );
   }
 
   void goToMyFocusPage() {
@@ -374,4 +385,9 @@ class _MyPageState extends State<MyPage> {
         new MaterialPageRoute(builder: (context) => new FocusMePage()));
   }
 
+  void goToinfluencepage() {
+    Navigator.push(context,
+        new MaterialPageRoute(builder: (context) => new cyt_influence()));
+  }
 }
+
