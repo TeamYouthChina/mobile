@@ -14,7 +14,7 @@ class ExplorePageState extends State<ExplorePage>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new tanSuo();
+    return new TanSuo();
   }
 }
 
