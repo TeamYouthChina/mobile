@@ -21,27 +21,45 @@ class _TanSuoState extends State<TanSuo> {
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(
-                  child: Container(
-                    child: Text('问答'),
+                new GestureDetector(
+                  child: new Tab(
+                    child: Container(
+                      child: Text('问答'),
+                    ),
                   ),
+                  onTap: (){
+                    setState(() {
+                      index = 0;
+                    });
+                  },
                 ),
-                Tab(
-                  child: Container(
-                    child: Text('热门短评'),
+
+                new GestureDetector(
+                  child: new Tab(
+                    child: Container(
+                      child: Text('热门短评'),
+                    ),
                   ),
+                  onTap: (){
+                    setState(() {
+                      index = 1;
+                    });
+                  },
                 ),
-                Tab(
-                  child: Container(
-                    child: Text('视频'),
+
+                new GestureDetector(
+                  child: new Tab(
+                    child: Container(
+                      child: Text('视频'),
+                    ),
                   ),
+                  onTap: (){
+                    setState(() {
+                      index = 2;
+                    });
+                  },
                 ),
               ],
-              onTap: (val) {
-                setState(() {
-                  index = val;
-                });
-              },
             ),
             title: Text('Tabs Demo'),
           ),
