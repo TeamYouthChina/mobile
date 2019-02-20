@@ -135,33 +135,59 @@ class MyFocusPage extends StatelessWidget {
                           children: <Widget>[
                             new Container(
                               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                              child: new Text(
-                                "同校好友",
-                                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
-                              ),
+                              child: new Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                new Text(
+                                  "同校好友",
+                                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                                ),
+                                new Row(
+                                  children: <Widget>[
+                                    new Text(
+                                      "查看全部",
+                                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                                    ),
+                                    new Icon(Icons.arrow_forward_ios,size: 15.0,),
+                                  ],
+                                ),
+                              ],),
                               decoration: BoxDecoration(
                                 color: Colors.grey[200],
                               ),
                             ),
                             new ListView.builder(
                                 shrinkWrap: true,
-                                itemCount: 10,
+                                itemCount: 3,
                                 itemBuilder: (context, idx) {
                                   return MyFollowing();
                                 }),
                             new Container(
                               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                              child: new Text(
-                                "可能感兴趣的人",
-                                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
-                              ),
+                              child: new Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  new Text(
+                                    "可能感兴趣的人",
+                                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                                  ),
+                                  new Row(
+                                    children: <Widget>[
+                                      new Text(
+                                        "查看全部",
+                                        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                                      ),
+                                      new Icon(Icons.arrow_forward_ios,size: 15.0,),
+                                    ],
+                                  ),
+                                ],),
                               decoration: BoxDecoration(
                                 color: Colors.grey[200],
                               ),
                             ),
                             new ListView.builder(
                                 shrinkWrap: true,
-                                itemCount: 10,
+                                itemCount: 3,
                                 itemBuilder: (context, idx) {
                                   return MyFollowing();
                                 }),
@@ -203,6 +229,7 @@ class _MyFollowingState extends State<MyFollowing> {
   @override
   Widget build(BuildContext context) {
     return new Container(
+      color: Colors.white,
         child: new Column(
       children: <Widget>[
         new Row(
