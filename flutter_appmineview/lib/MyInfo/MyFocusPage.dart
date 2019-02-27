@@ -212,7 +212,7 @@ class MyFollowing extends StatefulWidget {
 }
 
 class _MyFollowingState extends State<MyFollowing> {
-  final String _name = '求职大神';
+  final String _name = '职大神';
 
   final String _company = 'Ibm';
 
