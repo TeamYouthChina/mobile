@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Cyt_Setting_Privacy.dart';
 
 class Cyt_Setting extends StatefulWidget {
   @override
@@ -11,6 +12,15 @@ class _Cyt_SettingState extends State<Cyt_Setting> {
     return Scaffold(
         appBar: new PreferredSize(
             child: new AppBar(
+              title: new Row(
+//                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    '设置',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                ],
+              ),
               leading: new IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
@@ -30,7 +40,7 @@ class _Cyt_SettingState extends State<Cyt_Setting> {
               height: 30.0,
               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+//                color: Colors.white,
               ),
             ),
             new ListView(
@@ -48,13 +58,26 @@ class _Cyt_SettingState extends State<Cyt_Setting> {
                   height: 40.0,
                 ),
                 new Padding(
-                  padding: const EdgeInsets.only(left: 30.0),
-                  child: new Text(
-                    '隐私设置',
-                    style:
-                        TextStyle(fontWeight: FontWeight.w200, fontSize: 17.0),
-                  ),
-                ),
+                    padding: const EdgeInsets.only(left: 30.0),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        new ButtonTheme(
+                          padding: EdgeInsets.only(right: 0.0, left: 10.0),
+                          child: new FlatButton(
+                            padding: EdgeInsets.only(right: 0.0, left: 0.0),
+                            onPressed: () {
+                              goToCyt_Setting_Privacy(context);
+                            },
+                            child: new Text(
+                              '隐私设置',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w200, fontSize: 17.0),
+                            ),
+                          ),
+                        )
+                      ],
+                    )),
                 new Divider(
                   height: 40.0,
                 ),
@@ -99,6 +122,7 @@ class _Cyt_SettingState extends State<Cyt_Setting> {
 ////    TextStyle textStyle = new TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0);
 //    //设置Padding
 //    return new Container(
+
 //
 //      child: new Column(
 //        children: <Widget>[
@@ -118,4 +142,9 @@ class _Cyt_SettingState extends State<Cyt_Setting> {
 //
 //  }
 
+}
+
+void goToCyt_Setting_Privacy(BuildContext context) {
+  Navigator.push(context,
+      new MaterialPageRoute(builder: (context) => new Cyt_Setting_Privacy()));
 }
