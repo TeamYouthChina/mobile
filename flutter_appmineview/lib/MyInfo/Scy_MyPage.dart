@@ -3,6 +3,7 @@ import 'search_bar.dart';
 import 'MyFocusPage.dart';
 import 'FocusMePage.dart';
 import 'cyt_influence.dart';
+import 'Cyt_Setting.dart';
 
 class MyPage extends StatefulWidget {
   MyPage({Key key}) : super(key: key);
@@ -336,10 +337,13 @@ class _MyPageState extends State<MyPage> {
                         new Container(
                           height: 8.0,
                         ),
-                        new Text(
-                          '设置',
-                          style: TextStyle(fontSize: 15.0),
-                        ),
+                        new FlatButton(
+                            onPressed: goToCyt_Setting,
+                            child: new Text(
+                              '设置',
+                              style: TextStyle(fontSize: 15.0),
+                            )),
+
                       ],
                     ),
                     new Column(
@@ -389,5 +393,9 @@ class _MyPageState extends State<MyPage> {
     Navigator.push(context,
         new MaterialPageRoute(builder: (context) => new cyt_influence()));
   }
-}
 
+  void goToCyt_Setting() {
+    Navigator.push(context,
+        new MaterialPageRoute(builder: (context) => new Cyt_Setting()));
+  }
+}
