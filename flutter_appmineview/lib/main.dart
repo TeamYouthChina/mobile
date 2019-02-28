@@ -3,10 +3,13 @@ import 'MeetingPage.dart';
 import 'ExplorePage.dart';
 import 'MessagePage.dart';
 import 'MyInfoPage.dart';
+import 'login/login_page.dart';
+import 'package:dim/dim.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  Dim dim = new Dim();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -25,19 +28,26 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Center(
-        child: RandomWords(),
+        child: LoginPage(dim: dim,),
       ),
     );
   }
 }
 
 class RandomWords extends StatefulWidget {
+  String user;
+  Dim dim;
+  RandomWords({this.user,this.dim});
   @override
-  createState() => new RandomWordsState();
+  createState() => new RandomWordsState(user: user,dim: dim,);
 }
 
 class RandomWordsState extends State<RandomWords>
     with SingleTickerProviderStateMixin {
+  String user;
+  Dim dim;
+  RandomWordsState({this.user,this.dim});
+
   final List<BottomNavigationBarItem> listSet = [
     new BottomNavigationBarItem(
       icon: new Icon(Icons.chat, color: Colors.grey),
