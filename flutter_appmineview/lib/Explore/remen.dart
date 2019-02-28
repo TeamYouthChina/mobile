@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_appmineview/Explore/AnswerPage.dart';
 class ReMen extends StatefulWidget {
   @override
   _ReMenState createState() => _ReMenState();
@@ -35,7 +35,7 @@ class _ReMenState extends State<ReMen> {
                       minWidth: 20.0,
                       padding: EdgeInsets.only(left: 0.0, top: 5.0),
                       child: FlatButton(
-                        onPressed: name,
+                        onPressed: (){name(context, _name);},
                         child: Text(
                           _name,
                           style: TextStyle(fontSize: 13.0),
@@ -101,6 +101,11 @@ void pinLun() {
   return null;
 }
 
-void name() {
+void name(BuildContext context, String name) {
+  Navigator.push(
+      context,
+      new MaterialPageRoute(
+        builder: (context) => new AnswerPage(name),
+      ));
   return null;
 }
