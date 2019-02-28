@@ -55,11 +55,11 @@ class _TanSuoState extends State<TanSuo> {
                   ),
                 ),
               ],
-              onTap: (val) {
-                setState(() {
-                  index = val;
-                });
-              },
+//              onTap: (val) {
+//                setState(() {
+//                  index = val;
+//                });
+//              },
             ),
             title: Text('探索'),
           ),
