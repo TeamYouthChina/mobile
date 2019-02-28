@@ -4,6 +4,7 @@ import 'ExplorePage.dart';
 import 'MessagePage.dart';
 import 'MyInfoPage.dart';
 import 'login/login_page.dart';
+import 'Message/Chatlist.dart';
 import 'package:dim/dim.dart';
 
 void main() => runApp(MyApp());
@@ -74,7 +75,7 @@ class RandomWordsState extends State<RandomWords>
 
 
   final List<StatefulWidget> vcSet = [
-    new MessagePage(),
+    new ChatList(),
     new MeetingPage(),
     new ExplorePage(),
     new MyInfoPage()
@@ -125,6 +126,7 @@ class RandomWordsState extends State<RandomWords>
 
   @override
   void initState() {
+    vcSet[0]=ChatList(user: user,dim: dim,);
     super.initState();
 
     ///初始化时创建控制器
