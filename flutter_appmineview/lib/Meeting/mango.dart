@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Recommend.dart';
 import 'Attention.dart';
+import 'Recommend.dart';
 import 'package:flutter_appmineview/MyInfo/search_bar.dart';
 
 class RoundTable extends StatelessWidget {
@@ -12,7 +12,7 @@ class RoundTable extends StatelessWidget {
         length: 3,
          child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom: TabBar(   //
               tabs: [
                 Tab(
                   child: Container(
@@ -34,18 +34,15 @@ class RoundTable extends StatelessWidget {
           body: TabBarView(
             children: [
               //分别对应2个界面
-              new TuiJian(),
               new ListView.builder(
-                  itemCount: 30,
+                  itemCount: 1,
                   itemBuilder: (context, idx) {
-                    return GuanZhu();
+                    return Attention();
                   }),
-
-              new TuiJian(),
               new ListView.builder(
-                  itemCount: 20,
+                  itemCount: 1,
                   itemBuilder:(context, idx) {
-                    return TuiJian();
+                    return Recommend();
                   }),
             ],
           ),
