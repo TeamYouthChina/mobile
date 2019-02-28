@@ -128,7 +128,6 @@ class RandomWordsState extends State<RandomWords>
   void initState() {
     vcSet[0]=ChatList(user: user,dim: dim,);
     super.initState();
-
     ///初始化时创建控制器
     ///通过 with SingleTickerProviderStateMixin 实现动画效果。
     _tabController = new TabController(vsync: this, length: vcSet.length);
@@ -140,7 +139,9 @@ class RandomWordsState extends State<RandomWords>
     ///页面销毁时，销毁控制器
     _tabController.dispose();
     _pageController.dispose();
+    dim.imLogout();
     super.dispose();
+
   }
 
   @override

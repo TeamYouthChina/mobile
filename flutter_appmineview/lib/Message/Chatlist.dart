@@ -45,7 +45,6 @@ class _ChatListState extends State<ChatList> {
 
   @override
   void dispose() {
-    logout();
     super.dispose();
   }
 
