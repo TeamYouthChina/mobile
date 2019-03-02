@@ -36,7 +36,8 @@ class CheckingButtonBar extends StatelessWidget{
                     ),
                   ],
                 ),
-              ))
+              )
+          )
         ],
       ),
     );
