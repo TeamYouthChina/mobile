@@ -4,6 +4,7 @@ import 'MyFocusPage.dart';
 import 'FocusMePage.dart';
 import 'cyt_influence.dart';
 import 'PersonInfo.dart';
+import 'Cyt_Setting.dart';
 
 class MyPage extends StatefulWidget {
   MyPage({Key key}) : super(key: key);
@@ -53,13 +54,13 @@ class _MyPageState extends State<MyPage> {
                               radius: 35.0,
                               backgroundImage: AssetImage('image/image1.jpg'),
                             )),
-                        title: new Text(_nickname),
+                        title: new Text(this._nickname),
                         subtitle: new Text(_intro),
                         trailing: new Container(
                             width: 120.0,
                             child: new FlatButton(
                                 onPressed: (){
-                                  gotoPersonInfo(_nickname);
+                                  gotoPersonInfo(this._nickname);
                                 },
                                 child: new Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
@@ -392,9 +393,15 @@ class _MyPageState extends State<MyPage> {
     Navigator.push(context,
         new MaterialPageRoute(builder: (context) => new cyt_influence()));
   }
+
   void gotoPersonInfo(String name){
     Navigator.push(context,
         new MaterialPageRoute(builder: (context) => new PersonInfo(name:name)));
+  }
+
+  void goToCyt_Setting() {
+    Navigator.push(context,
+        new MaterialPageRoute(builder: (context) => new Cyt_Setting()));
   }
 }
 
