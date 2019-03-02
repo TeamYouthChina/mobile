@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'dart:io';
 
 class ReMen extends StatefulWidget {
   @override
@@ -7,11 +9,42 @@ class ReMen extends StatefulWidget {
 
 class _ReMenState extends State<ReMen> {
   final String _name = '加拿大电鳗';
+  int zannumber = 11;
 
   final String comment = '在诺基亚的一年多的实习中受益匪浅，在诺基亚的一年多的实'
       '习中受益匪浅在诺基亚的一年多的实习中受益匪浅在诺基亚的一年多的实习中受益匪浅啦啦啦啦啦'
       '啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈你看这个面它又'
       '长又宽就像这个碗它又大又圆，你们，来这里，吃饭，很开心!';
+
+  void zanTong() async {
+    var url = 'http://47.254.46.117:4000/applicants/1/contacts';
+    var httpClient = new HttpClient();
+
+    String result;
+    try {
+      var request = await httpClient.getUrl(Uri.parse(url));
+      var response = await request.close();
+      if (response.statusCode == HttpStatus.ok) {
+        var js = await response.transform(utf8.decoder).join();
+        var data = json.decode(js);
+        print(data);
+
+        Content content = new Content.fromJson(data);
+        print(content.status.code);
+
+//        result = data['email'];
+//        print(result);
+      } else {
+        result =
+            'Error getting IP address:\nHttp status ${response.statusCode}';
+      }
+    } catch (exception) {
+      result = 'Failed getting IP address';
+    }
+    setState(() {
+
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +95,7 @@ class _ReMenState extends State<ReMen> {
                             child: new FlatButton(
                                 onPressed: zanTong,
                                 child: new Container(
-                                  child: new Text('11' + '赞同',
+                                  child: new Text('$zannumber赞同',
                                       style: TextStyle(color: Colors.grey)),
                                 ))),
                       ),
@@ -93,8 +126,32 @@ class _ReMenState extends State<ReMen> {
   }
 }
 
-void zanTong() {
-  return null;
+void zanTong()
+
+async {
+  var url = 'http://47.254.46.117:4000/applicants/1/contacts';
+  var httpClient = new HttpClient();
+
+  String result;
+  try {
+    var request = await httpClient.getUrl(Uri.parse(url));
+    var response = await request.close();
+    if (response.statusCode == HttpStatus.ok) {
+      var js = await response.transform(utf8.decoder).join();
+      var data = json.decode(js);
+      print(data);
+
+      Content content = new Content.fromJson(data);
+      print(content.status.reason);
+
+//        result = data['email'];
+//        print(result);
+    } else {
+      result = 'Error getting IP address:\nHttp status ${response.statusCode}';
+    }
+  } catch (exception) {
+    result = 'Failed getting IP address';
+  }
 }
 
 void pinLun() {
@@ -103,4 +160,38 @@ void pinLun() {
 
 void name() {
   return null;
+}
+
+class Status {
+  int code;
+  String reason;
+
+  Status({
+    this.code,
+    this.reason,
+  });
+
+  factory Status.fromJson(Map<String, dynamic> json) {
+    return Status(code: json['code'], reason: json['reason']);
+  }
+}
+
+class Content {
+  String email;
+  String phonenumbers;
+  Status status;
+
+  Content({
+    this.email,
+    this.phonenumbers,
+    this.status,
+  });
+
+  factory Content.fromJson(Map<String, dynamic> parsedJson) {
+    return Content(
+      email: parsedJson['emails'],
+      phonenumbers: parsedJson['phonenumbers'],
+      status: Status.fromJson(parsedJson['status']),
+    );
+  }
 }

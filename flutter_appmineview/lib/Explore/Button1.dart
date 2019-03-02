@@ -1,13 +1,4 @@
 import 'package:flutter/material.dart';
-import 'Video.dart';
-import 'remen.dart';
-import 'wenda.dart';
-import 'tiwen.dart';
-
-
-
-
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'tiwen.dart';
@@ -15,90 +6,6 @@ import 'wenda.dart';
 import 'XieWenZhang.dart';
 import 'XieHuiDa.dart';
 import 'XieDuanPin.dart';
-
-
-
-
-
-
-class TanSuo extends StatefulWidget {
-  @override
-  _TanSuoState createState() => _TanSuoState();
-}
-
-class _TanSuoState extends State<TanSuo> {
-  List<String> _floatBtnRText = ["null", "视频"];
-  int index = 0;
-  int num = 0;
-  int itemCount = 10;
-
-  @override
-  Widget build(BuildContext context) {
-    return
-      MaterialApp(
-      home: DefaultTabController(
-        length: 2,
-        child:
-        Scaffold(
-          resizeToAvoidBottomPadding: false,
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                  child: Container(
-                    child: Text('洞见'),
-                  ),
-                ),
-                Tab(
-                  child: Container(
-                    child: Text('视频'),
-                  ),
-                ),
-              ],
-//              onTap: (val) {
-//                setState(() {
-//                  index = val;
-//                });
-//              },
-            ),
-            title: Text('探索'),
-          ),
-          body: TabBarView(
-            children: [
-              //分别对应三个界面
-//              new ListView.builder(
-////                  itemCount: 10,
-//                  itemBuilder: (context, idx) {
-//                return WenDa();
-//              }),
-              new Text('1'),
-              new VideoApp(),
-            ],
-          ),
-//          floatingActionButton: FloatingActionButton(onPressed: null,child: new MenuButton(context: context),),
-            floatingActionButton: MenuButton(),
-        ),
-      ),
-    );
-  }
-}
-
-void _menu(){
-  return null;
-}
-
-void _question() {
-  return null;
-}
-
-
-
-
-
-
-
-
-
 
 
 //void main() {
@@ -146,7 +53,7 @@ class MenuButtonState extends State<MenuButton> with TickerProviderStateMixin {
 
   _renderSpeedDial() {
     return SpeedDial(
-      animatedIcon: AnimatedIcons.menu_close,
+      animatedIcon: AnimatedIcons.add_event,
       animatedIconTheme: IconThemeData(size: 22.0),
       // child: Icon(Icons.add),
       onOpen: () => print('OPENING DIAL'),

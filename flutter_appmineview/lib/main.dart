@@ -3,10 +3,14 @@ import 'MeetingPage.dart';
 import 'ExplorePage.dart';
 import 'MessagePage.dart';
 import 'MyInfoPage.dart';
+import 'login/login_page.dart';
+import 'Message/Chatlist.dart';
+import 'package:dim/dim.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  Dim dim = new Dim();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,21 +27,29 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        
       ),
       home: Center(
-        child: RandomWords(),
+        child: LoginPage(dim: dim,),
       ),
     );
   }
 }
 
 class RandomWords extends StatefulWidget {
+  String user;
+  Dim dim;
+  RandomWords({this.user,this.dim});
   @override
-  createState() => new RandomWordsState();
+  createState() => new RandomWordsState(user: user,dim: dim,);
 }
 
 class RandomWordsState extends State<RandomWords>
     with SingleTickerProviderStateMixin {
+  String user;
+  Dim dim;
+  RandomWordsState({this.user,this.dim});
+
   final List<BottomNavigationBarItem> listSet = [
     new BottomNavigationBarItem(
       icon: new Icon(Icons.chat, color: Colors.grey),
@@ -64,7 +76,7 @@ class RandomWordsState extends State<RandomWords>
 
 
   final List<StatefulWidget> vcSet = [
-    new MessagePage(),
+    new ChatList(),
     new MeetingPage(),
     new ExplorePage(),
     new MyInfoPage()
@@ -115,8 +127,8 @@ class RandomWordsState extends State<RandomWords>
 
   @override
   void initState() {
+    vcSet[0]=ChatList(user: user,dim: dim,);
     super.initState();
-
     ///初始化时创建控制器
     ///通过 with SingleTickerProviderStateMixin 实现动画效果。
     _tabController = new TabController(vsync: this, length: vcSet.length);
@@ -128,7 +140,9 @@ class RandomWordsState extends State<RandomWords>
     ///页面销毁时，销毁控制器
     _tabController.dispose();
     _pageController.dispose();
+    dim.imLogout();
     super.dispose();
+
   }
 
   @override
