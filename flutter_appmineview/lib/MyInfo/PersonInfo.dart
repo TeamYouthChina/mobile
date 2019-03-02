@@ -251,7 +251,7 @@ class PersonInfoState extends State<PersonInfo> {
                 ),
               ),
               new AdvantageTag(),
-              new Container(
+              /*new Container(
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                 child: new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -286,7 +286,7 @@ class PersonInfoState extends State<PersonInfo> {
                   color: Colors.grey[200],
                 ),
               ),
-              new Container(height: 100.0,),
+              new Container(height: 100.0,),*/
               new Container(height: 20.0,color: Colors.grey[200],)
             ],
           ),
@@ -502,19 +502,19 @@ class _AdvantageTagState extends State<AdvantageTag> {
         new Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            new FlatButton(onPressed: (){return null;}, child: Text("公司福利"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
-            new FlatButton(onPressed: (){return null;}, child: Text("笔试面试"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
-            new FlatButton(onPressed: (){return null;}, child:Text("公司氛围"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
-            new FlatButton(onPressed: (){return null;}, child: Text("自定义"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child: Text("公司福利"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child: Text("笔试面试"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child:Text("公司氛围"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child: Text("自定义"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
           ],
         ),
         new Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            new FlatButton(onPressed: (){return null;}, child: Text("公司福利"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
-            new FlatButton(onPressed: (){return null;}, child: Text("笔试面试"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
-            new FlatButton(onPressed: (){return null;}, child:Text("公司氛围"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
-            new FlatButton(onPressed: (){return null;}, child: Text("自定义"),color: Colors.yellow,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child: Text("公司福利"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child: Text("笔试面试"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child:Text("公司氛围"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
+            new FlatButton(onPressed: (){return null;}, child: Text("自定义"),color: Colors.grey,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),),
           ],
         ),
       ],
