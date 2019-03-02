@@ -102,7 +102,7 @@ class _ChatListState extends State<ChatList> {
     }
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("谈天论地"),
+        title: new Text("消息"),
       ),
       body: _buildchatlist(conversationList),
       floatingActionButton: new FloatingActionButton(

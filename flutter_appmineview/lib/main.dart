@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+        primaryColor: Colors.white,
         primarySwatch: Colors.blue,
         
       ),
@@ -76,9 +77,9 @@ class RandomWordsState extends State<RandomWords>
 
 
   final List<StatefulWidget> vcSet = [
-    new ChatList(),
-    new MeetingPage(),
     new ExplorePage(),
+    new MeetingPage(),
+    new ChatList(),
     new MyInfoPage()
   ];
   int _sindex = 0;
@@ -86,12 +87,12 @@ class RandomWordsState extends State<RandomWords>
   TabController _tabController;
   PageController _pageController = new PageController();
 
-  final List<String> tab = ["消息", "圆桌", "探索", "我的"];
+  final List<String> tab = ["探索", "圆桌", "消息", "我的"];
 
   final List<IconData> icons = [
-    Icons.textsms,
-    Icons.important_devices,
     Icons.camera,
+    Icons.important_devices,
+    Icons.textsms,
     Icons.person
   ];
 
@@ -127,7 +128,7 @@ class RandomWordsState extends State<RandomWords>
 
   @override
   void initState() {
-    vcSet[0]=ChatList(user: user,dim: dim,);
+    vcSet[2]=ChatList(user: user,dim: dim,);
     super.initState();
     ///初始化时创建控制器
     ///通过 with SingleTickerProviderStateMixin 实现动画效果。
@@ -155,6 +156,7 @@ class RandomWordsState extends State<RandomWords>
 //        ],
 //      ),
       bottomNavigationBar: new TabBar(
+        indicatorColor: Colors.transparent,
         controller: _tabController,
         tabs: _renderTab(),
       ),
@@ -162,7 +164,7 @@ class RandomWordsState extends State<RandomWords>
         controller: _pageController,
         children: vcSet,
         onPageChanged: (index) {
-          _tabController.animateTo(_sindex);
+          _tabController.animateTo(index);
         },
       ),
 
