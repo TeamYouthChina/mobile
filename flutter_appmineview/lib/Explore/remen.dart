@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appmineview/Explore/AnswerPage.dart';
 class ReMen extends StatefulWidget {
+  ReMen({Key key}):super(key:key);
   @override
   _ReMenState createState() => _ReMenState();
 }
 
 class _ReMenState extends State<ReMen> {
-  final String _name = '加拿大电鳗';
+  final String _name = '腾讯的软肋是什么？';
 
   final String comment = '在诺基亚的一年多的实习中受益匪浅，在诺基亚的一年多的实'
       '习中受益匪浅在诺基亚的一年多的实习中受益匪浅在诺基亚的一年多的实习中受益匪浅啦啦啦啦啦'
@@ -35,7 +36,7 @@ class _ReMenState extends State<ReMen> {
                       minWidth: 20.0,
                       padding: EdgeInsets.only(left: 0.0, top: 5.0),
                       child: FlatButton(
-                        onPressed: (){name(context, _name);},
+                        onPressed: (){name( _name);},
                         child: Text(
                           _name,
                           style: TextStyle(fontSize: 13.0),
@@ -91,21 +92,23 @@ class _ReMenState extends State<ReMen> {
       ),
     );
   }
+
+  void zanTong() {
+    return null;
+  }
+
+  void pinLun() {
+    return null;
+  }
+
+  void name(String name) {
+    Navigator.push(
+        context,
+        new MaterialPageRoute(
+          builder: (context) => new AnswerPage(name),
+        ));
+    return null;
+  }
 }
 
-void zanTong() {
-  return null;
-}
 
-void pinLun() {
-  return null;
-}
-
-void name(BuildContext context, String name) {
-  Navigator.push(
-      context,
-      new MaterialPageRoute(
-        builder: (context) => new AnswerPage(name),
-      ));
-  return null;
-}
