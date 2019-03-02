@@ -35,8 +35,7 @@ class _TanSuoState extends State<TanSuo> {
   @override
   Widget build(BuildContext context) {
     return
-      MaterialApp(
-      home: DefaultTabController(
+      DefaultTabController(
         length: 2,
         child:
         Scaffold(
@@ -71,14 +70,13 @@ class _TanSuoState extends State<TanSuo> {
 //                  itemBuilder: (context, idx) {
 //                return WenDa();
 //              }),
-              new Text('1'),
+              new ListView(children: <Widget>[new ReMen(),new ReMen(),new WenDa(),new WenDa()],),
               new VideoApp(),
             ],
           ),
 //          floatingActionButton: FloatingActionButton(onPressed: null,child: new MenuButton(context: context),),
             floatingActionButton: MenuButton(),
         ),
-      ),
     );
   }
 }
