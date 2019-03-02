@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'AttentionBody.dart';
-class TuiJian extends StatelessWidget {
+class Attention extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
