@@ -3,12 +3,12 @@ import 'PageDetail.dart';
 import 'dart:convert';
 import 'dart:io';
 
-class ReMen extends StatefulWidget {
+class QuestionDetail extends StatefulWidget {
   @override
-  _ReMenState createState() => _ReMenState();
+  _QuestionDetailState createState() => _QuestionDetailState();
 }
 
-class _ReMenState extends State<ReMen> {
+class _QuestionDetailState extends State<QuestionDetail> {
   final String _name = '加拿大电鳗';
   int _zanNumber = 1121;
 
@@ -39,7 +39,7 @@ class _ReMenState extends State<ReMen> {
 //        print(result);
       } else {
         result =
-            'Error getting IP address:\nHttp status ${response.statusCode}';
+        'Error getting IP address:\nHttp status ${response.statusCode}';
       }
     } catch (exception) {
       result = 'Failed getting IP address';
@@ -79,18 +79,18 @@ class _ReMenState extends State<ReMen> {
               ],
             ),
           ),
-          new Container(
-//            height: 60.0,
-            margin: EdgeInsets.only(bottom: 5.0),
-            child: Container(
-                child: FlatButton(
-              onPressed: _goToTopic,
-              child: Text(
-                _title,
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500),
-              ),
-            )),
-          ),
+//          new Container(
+////            height: 60.0,
+//            margin: EdgeInsets.only(bottom: 5.0),
+//            child: Container(
+//                child: FlatButton(
+//                  onPressed: _goToTopic,
+//                  child: Text(
+//                    _title,
+//                    style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500),
+//                  ),
+//                )),
+//          ),
           new Container(
               padding: EdgeInsets.only(left: 5.0), child: Text(comment)),
           new Row(

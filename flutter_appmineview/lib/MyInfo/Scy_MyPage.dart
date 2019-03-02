@@ -3,6 +3,7 @@ import 'search_bar.dart';
 import 'MyFocusPage.dart';
 import 'FocusMePage.dart';
 import 'cyt_influence.dart';
+import 'PersonInfo.dart';
 import 'Cyt_Setting.dart';
 
 class MyPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class MyPage extends StatefulWidget {
 
 class _MyPageState extends State<MyPage> {
   final String _hintText = '搜索你感兴趣的话题吧';
-  final String _name = '芝士就是力量';
+  final String _nickname = '吴嘉敏';
   final String _intro = '简介：我是谁我在那';
   final int _myFollowerNum = 100;
   final int _FollowMeNum = 100;
@@ -53,12 +54,14 @@ class _MyPageState extends State<MyPage> {
                               radius: 35.0,
                               backgroundImage: AssetImage('image/image1.jpg'),
                             )),
-                        title: new Text(_name),
+                        title: new Text(this._nickname),
                         subtitle: new Text(_intro),
                         trailing: new Container(
                             width: 120.0,
                             child: new FlatButton(
-                                onPressed: null,
+                                onPressed: (){
+                                  gotoPersonInfo(this._nickname);
+                                },
                                 child: new Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: <Widget>[
@@ -337,13 +340,10 @@ class _MyPageState extends State<MyPage> {
                         new Container(
                           height: 8.0,
                         ),
-                        new FlatButton(
-                            onPressed: goToCyt_Setting,
-                            child: new Text(
-                              '设置',
-                              style: TextStyle(fontSize: 15.0),
-                            )),
-
+                        new Text(
+                          '设置',
+                          style: TextStyle(fontSize: 15.0),
+                        ),
                       ],
                     ),
                     new Column(
@@ -394,8 +394,14 @@ class _MyPageState extends State<MyPage> {
         new MaterialPageRoute(builder: (context) => new cyt_influence()));
   }
 
+  void gotoPersonInfo(String name){
+    Navigator.push(context,
+        new MaterialPageRoute(builder: (context) => new PersonInfo(name:name)));
+  }
+
   void goToCyt_Setting() {
     Navigator.push(context,
         new MaterialPageRoute(builder: (context) => new Cyt_Setting()));
   }
 }
+

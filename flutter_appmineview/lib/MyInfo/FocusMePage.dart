@@ -16,7 +16,7 @@ class FocusMePage extends StatelessWidget {
                 Navigator.of(context).pop();
               },
             ),
-            title: new Text('我关注'),
+            title: new Text('关注我'),
             centerTitle: true,
           ),
 
@@ -25,7 +25,7 @@ class FocusMePage extends StatelessWidget {
                     new Expanded(
                       flex: 1,
                       child: new SearchBar(
-                        hintText: '搜索我关注的人',
+                        hintText: '搜索关注我的人',
                       ),
                     ),
                     new Expanded(
