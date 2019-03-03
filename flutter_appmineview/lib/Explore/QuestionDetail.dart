@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'PageDetail.dart';
 import 'dart:convert';
 import 'dart:io';
+import 'AnswerPage.dart';
 
 class QuestionDetail extends StatefulWidget {
   @override
@@ -39,12 +40,20 @@ class _QuestionDetailState extends State<QuestionDetail> {
 //        print(result);
       } else {
         result =
-        'Error getting IP address:\nHttp status ${response.statusCode}';
+            'Error getting IP address:\nHttp status ${response.statusCode}';
       }
     } catch (exception) {
       result = 'Failed getting IP address';
     }
     setState(() {});
+  }
+
+  void _gotodetail(String title) {
+    Navigator.push(
+        context,
+        new MaterialPageRoute(
+          builder: (context) => new AnswerPage(title),
+        ));
   }
 
   @override
@@ -92,7 +101,12 @@ class _QuestionDetailState extends State<QuestionDetail> {
 //                )),
 //          ),
           new Container(
-              padding: EdgeInsets.only(left: 5.0), child: Text(comment)),
+              padding: EdgeInsets.only(left: 5.0),
+              child: FlatButton(
+                  onPressed: () {
+                    _gotodetail(_title);
+                  },
+                  child: Text(comment))),
           new Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[

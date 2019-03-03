@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Cyt_Duanze.dart';
 
 class WenDa extends StatefulWidget {
   @override
@@ -14,6 +15,14 @@ class _WenDaState extends State<WenDa> {
       '习中受益匪浅在诺基亚的一年多的实习中受益匪浅在诺基亚的一年多的实习中受益匪浅';
 
   final String evalution = '5分';
+
+  void _gotodetail(String title) {
+    Navigator.push(
+        context,
+        new MaterialPageRoute(
+          builder: (context) => new DuanZe(title: title,),
+        ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +43,17 @@ class _WenDaState extends State<WenDa> {
               children: <Widget>[
                 Text(_intro),
                 new Container(
-                    margin: EdgeInsets.only(left: 20.0),
-                    width: 40.0,
-                    height: 20.0,
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: new BorderRadius.all(Radius.circular(25.0))),
-                    child: Text('  ' + evalution,style: new TextStyle(
-                      color: Colors.white,
-                        fontStyle: FontStyle.italic)),),
+                  margin: EdgeInsets.only(left: 20.0),
+                  width: 40.0,
+                  height: 20.0,
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius:
+                          new BorderRadius.all(Radius.circular(25.0))),
+                  child: Text('  ' + evalution,
+                      style: new TextStyle(
+                          color: Colors.white, fontStyle: FontStyle.italic)),
+                ),
               ],
             ),
 
@@ -63,7 +74,12 @@ class _WenDaState extends State<WenDa> {
                       ],
                     ))),
           ),
-          new Text(comment),
+          FlatButton(
+            onPressed: () {
+              _gotodetail(_intro);
+            },
+            child: new Text(comment),
+          ),
           new Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
@@ -80,7 +96,9 @@ class _WenDaState extends State<WenDa> {
                   child: new Row(
                     children: <Widget>[
                       new Text('11'),
-                      new Text('评论',),
+                      new Text(
+                        '评论',
+                      ),
                     ],
                   ))
             ],
