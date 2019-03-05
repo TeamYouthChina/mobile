@@ -71,27 +71,40 @@ class _ChatListState extends State<ChatList> {
   }
 
   Widget _buildchatlist(ConversationList list) {
-    return ListView.builder(
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFFE0E0E0),
+      ),
+      child: ListView.builder(
         itemCount: list.conversationList.length,
         itemBuilder: (context, idx) {
-          return ListTile(
-            title: Text(
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border(bottom: BorderSide(color: Color(0xFFEEEEEE))),
+            ),
+            child: ListTile(
+              title: Text(
 //              "User2"
-                list.conversationList[idx].peer),
-            subtitle: Text(list.conversationList[idx].type),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
+                  list.conversationList[idx].peer),
+              subtitle: Text(list.conversationList[idx].type),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
                     builder: (context) => ChatPage(
-                      dim: dim,
-                      user: user,
-                      chattinguser: list.conversationList[idx].peer,
-                    )),
-              );
-            },
+                          dim: dim,
+                          user: user,
+                          chattinguser: list.conversationList[idx].peer,
+                        ),
+                  ),
+                );
+              },
+            ),
           );
-        });
+        },
+      ),
+    );
   }
 
   Widget build(BuildContext context) {
@@ -102,13 +115,13 @@ class _ChatListState extends State<ChatList> {
     }
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("谈天论地"),
+        title: new Text("消息"),
       ),
       body: _buildchatlist(conversationList),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: () {},
-        child: new Icon(Icons.add),
-      ),
+//      floatingActionButton: new FloatingActionButton(
+//        onPressed: () {},
+//        child: new Icon(Icons.add),
+//      ),
     );
   }
 }

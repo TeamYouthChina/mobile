@@ -10,7 +10,8 @@ class AnswerPage extends StatelessWidget {
     this.title = title;
   }
 
-  final String comment = '在今天的中国互联网行业，腾讯拥有近乎垄断的平台，庞大的人气，源源不断的现金流，一般的小问题对腾讯是构成不了威'
+  final String comment =
+      '在今天的中国互联网行业，腾讯拥有近乎垄断的平台，庞大的人气，源源不断的现金流，一般的小问题对腾讯是构成不了威'
       '胁的。那么，腾讯的问题在哪里？我们可以回顾一下微软的历史。在1990年代的科技界，微软同样是这么一家神一般存在的巨头。他有钱，有人才，'
       '有技术，有垄断的平台，貌似战无不胜。但微软也不是通吃的，在一些小的细分行业，比如PS绘图软件，财务软件，人家就不做。不是不想做，而是精力不允许太分散。'
       '对于一家科技巨头来说，永远要记住一件事——我之所以拥有今天的江湖地位，是因为我有战略眼光，或者说，我踩到了狗屎运，抓住了技术发展的'
@@ -54,112 +55,115 @@ class AnswerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: Text("问题详情页"),
       ),
-      body: Container(
-        child: ListView(
-          children: <Widget>[
-            Container(height: 20.0),
-            Container(
+      body: ListView(
+        children: <Widget>[
+          Container(height: 20.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+//           limit the margin for a long line
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width,
+                ),
+                child: Text(
+                  title,
+                  overflow: TextOverflow.clip,
+                  maxLines: 3,
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            child: FlatButton(
+              onPressed: () {
+                print('onpress');
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    "   " + title,
-                    style: TextStyle(fontSize: 20),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        '查看全部999个回答',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Icon(
+                        Icons.navigate_next,
+                        color: Colors.grey,
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-            Container(
-              child: FlatButton(
-                onPressed: () {
-                  print('onpress');
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          '查看全部999个回答',
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                        Icon(
-                          Icons.navigate_next,
-                          color: Colors.grey,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(height: 10.0, child: Text('')),
-            Container(
-                height: 1.0, decoration: BoxDecoration(color: Colors.grey)),
-            Container(
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      child: FlatButton(
-                        onPressed: () {
-                          print('onpress');
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(Icons.add_box, color: Colors.black),
-                            Text('邀请回答', style: TextStyle(color: Colors.black)),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      child: FlatButton(
-                        onPressed: () {
-                          print('onpress');
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(Icons.border_color, color: Colors.black),
-                            Text('写回答', style: TextStyle(color: Colors.black)),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-                height: 4.0, decoration: BoxDecoration(color: Colors.grey)),
-            Container(
-              child: new UserName(
-                name: "aa",
-              ),
-            ),
-            ListView(
-              primary: false,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
+          ),
+          Container(height: 10.0, child: Text('')),
+          Container(height: 1.0, decoration: BoxDecoration(color: Colors.grey)),
+          Container(
+            child: Row(
               children: <Widget>[
-                new Container(
-                  child: Text(
-                    comment,
+                Expanded(
+                  child: Container(
+                    child: FlatButton(
+                      onPressed: () {
+                        print('onpress');
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.add_box, color: Colors.black),
+                          Text('邀请回答', style: TextStyle(color: Colors.black)),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    child: FlatButton(
+                      onPressed: () {
+                        print('onpress');
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.border_color, color: Colors.black),
+                          Text('写回答', style: TextStyle(color: Colors.black)),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+          Container(height: 4.0, decoration: BoxDecoration(color: Colors.grey)),
+          Container(
+            child: new UserName(
+              name: "aa",
+            ),
+          ),
+          ListView(
+            primary: false,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            children: <Widget>[
+              new Container(
+                child: Text(
+                  comment,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -5,8 +5,7 @@ import 'package:flutter_appmineview/login/style/theme.dart' as Theme;
 import 'package:flutter_appmineview/login/utils/bubble_indication_painter.dart';
 import 'package:dim/dim.dart';
 import 'dart:async';
-import 'package:flutter_appmineview/main.dart';
-
+import 'package:flutter_appmineview/RandomWords.dart';
 
 class LoginPage extends StatefulWidget {
   Dim dim;
