@@ -125,7 +125,7 @@ class _Cyt_SettingState extends State<Cyt_Setting> {
 
 //
 //      child: new Column(
-//        children: <Widget>[
+//        children: <Wid get>[
 //          new Padding(padding: const EdgeInsets.only(left: 15.0,right: 250.0, top: 15.0),
 //              child: new Text("账号设置", style: TextStyle(color: Colors.black, fontSize: 20.0))),
 //          new Divider(
