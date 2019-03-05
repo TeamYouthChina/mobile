@@ -9,12 +9,14 @@ import 'dart:convert';
 import 'package:flutter_appmineview/Message/decodejson/ChatMessage.dart';
 
 class ChatPage extends StatefulWidget {
-  ChatPage({this.user, this.chattinguser,this.dim});
+  ChatPage({this.user, this.chattinguser, this.dim});
+
   Dim dim;
   String user;
   String chattinguser;
+
   @override
-  _ChatPageState createState() => new _ChatPageState(user,chattinguser,dim);
+  _ChatPageState createState() => new _ChatPageState(user, chattinguser, dim);
 }
 
 class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
@@ -233,33 +235,37 @@ class UIChatMessage extends StatelessWidget {
                     margin: const EdgeInsets.only(right: 16.0),
                     child: new CircleAvatar(child: new Text(user[0])),
                   ),
-                  new Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      new Text(user,
-                          style: Theme.of(context).textTheme.subhead),
-                      new Container(
-                        margin: const EdgeInsets.only(top: 5.0),
-                        child: new Text(text),
-                      )
-                    ],
-                  )
+                  new Container(
+                    child: new Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        new Text(user,
+                            style: Theme.of(context).textTheme.subhead),
+                        new Container(
+                          margin: const EdgeInsets.only(top: 5.0),
+                          child: new Text(text),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               )
             : new Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  new Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      new Text(user,
-                          style: Theme.of(context).textTheme.subhead),
-                      new Container(
-                        margin: const EdgeInsets.only(top: 5.0),
-                        child: new Text(text),
-                      )
-                    ],
+                  new Container(
+                    child: new Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        new Text(user,
+                            style: Theme.of(context).textTheme.subhead),
+                        new Container(
+                          margin: const EdgeInsets.only(top: 5.0),
+                          child: new Text(text),
+                        )
+                      ],
+                    ),
                   ),
                   new Container(
                     margin: const EdgeInsets.only(left: 16.0),
