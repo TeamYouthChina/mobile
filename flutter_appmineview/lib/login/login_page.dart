@@ -64,6 +64,13 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
       user = "User2";
       return true;
     }
+//    if (fuser == "bobo") {
+//      password =
+//      "eJxlj8FOg0AURfd8xYS10ZlhUDTpAloITTAtUIxhQxhmSh9QQJhqjfHfjVQjiW97zs2970NDCOm7IL7Oi6I7tSpT773U0QPSsX71B-seRJarzBjEPyjPPQwyy-dKDhMkpmlSjOcOCNkq2MOPwTvezego6myquMQZxsRit5TNFSgn*OiGy7X90jjcMgoWN75-M4ZJ4m9Z2sTHZBtuwD3ZjsNJ-QTnOrLBDpb4YLob0VSlGqrS4x6mQLw4TdPIidar6nmlgkMZqLdysZhVKjjK33*IdX-HjPmgVzmM0LWTQDExCTXw9*nap-YFe3ZcjA__"
+//      ;
+//      user = "bobo";
+//      return true;
+//    }
     return false;
   }
 

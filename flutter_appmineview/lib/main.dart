@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'login/login_page.dart';
 import 'package:dim/dim.dart';
 import 'package:flutter_appmineview/login/style/theme.dart' as Theme;
+import 'RandomWords.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,11 +26,16 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primaryColor: Colors.white,
         primaryColorLight: Theme.Colors.activecolor,
+        backgroundColor: Colors.grey[300],
+        accentColor: Theme.Colors.activecolor,
       ),
       home: Center(
-        child: LoginPage(
-          dim: dim,
-        ),
+        child:
+//        RandomWords(),
+        
+         LoginPage(
+           dim: dim,
+         ),
       ),
     );
   }

@@ -6,6 +6,8 @@ import 'Message/Chatlist.dart';
 import 'package:dim/dim.dart';
 import 'package:flutter_appmineview/login/style/theme.dart' as Theme;
 
+import 'Meeting/MeetingGuanzhuPage.dart';
+
 class RandomWords extends StatefulWidget {
   String user;
   Dim dim;
@@ -49,11 +51,12 @@ class RandomWordsState extends State<RandomWords>
   ];
   final List<Widget> listtabs = [];
 
-  final List<StatefulWidget> vcSet = [
-    new ExplorePage(),
-    new MeetingPage(),
-    new ChatList(),
-    new MyInfoPage()
+  final List<Widget> vcSet = [
+     new ExplorePage(),
+     new MeetingGuanzhuPage(),
+    // new MeetingPage(),
+     new ChatList(),
+     new MyInfoPage()
   ];
   int _sindex;
   Color activecolor;
@@ -105,10 +108,11 @@ class RandomWordsState extends State<RandomWords>
 
   @override
   void initState() {
-    vcSet[2] = ChatList(
-      user: user,
-      dim: dim,
-    );
+    print('user='+user+'\n');
+     vcSet[2] = ChatList(
+       user: user,
+       dim: dim,
+     );
     _sindex = 0;
     super.initState();
 
@@ -123,7 +127,7 @@ class RandomWordsState extends State<RandomWords>
     ///页面销毁时，销毁控制器
     _tabController.dispose();
     _pageController.dispose();
-    dim.imLogout();
+     dim.imLogout();
     super.dispose();
   }
 
