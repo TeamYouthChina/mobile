@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 final String _hint = '描述你的问题，至少10个字';
 final String _hint1 = '为你的问题添加更详细的描述，让职场达人更好的帮助';
 
-final int MAXLINE = 12;
+final int MAXLINE = 20;
 
 class TiWen extends StatefulWidget {
   @override
