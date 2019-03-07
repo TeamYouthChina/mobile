@@ -11,7 +11,7 @@ class UserName extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      padding: EdgeInsets.only(top: 0.0),
+      padding: EdgeInsets.only(left: 10.0),
       child: Row(
         children: <Widget>[
           new Padding(
@@ -33,7 +33,10 @@ class UserName extends StatelessWidget {
                       },
                       child: Text(
                         '$name',
-                        style: TextStyle(fontSize: 15.0),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15.0,
+                            color: Color.fromRGBO(67, 79, 105, 1)),
                       ),
                     ),
                   ),
