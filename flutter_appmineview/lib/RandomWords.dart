@@ -5,6 +5,8 @@ import 'MyInfoPage.dart';
 import 'Message/Chatlist.dart';
 import 'package:dim/dim.dart';
 import 'package:flutter_appmineview/login/style/theme.dart' as Theme;
+import 'package:flutter_appmineview/Scy/Explore.dart';
+import 'package:flutter_appmineview/Scy/MyPage.dart';
 
 import 'Meeting/MeetingGuanzhuPage.dart';
 
@@ -52,11 +54,11 @@ class RandomWordsState extends State<RandomWords>
   final List<Widget> listtabs = [];
 
   final List<Widget> vcSet = [
-     new ExplorePage(),
+     new MyHomePage(),
      new MeetingGuanzhuPage(),
     // new MeetingPage(),
      new ChatList(),
-     new MyInfoPage()
+     new MyPage()
   ];
   int _sindex;
   Color activecolor;

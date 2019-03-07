@@ -79,13 +79,20 @@ class _WriteShortCommentState extends State<WriteShortComment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
+        automaticallyImplyLeading: false,
         elevation: 2,
-        leading: null,
+//        leading: new Text(
+//          "取消",
+//          style: TextStyle(
+//              fontSize: 14,
+//              fontWeight: FontWeight.w600,
+//              color: Color.fromRGBO(69, 79, 105, 1)),
+//        ),
         title: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             new FlatButton(
-              onPressed: null,
+              onPressed: (){Navigator.of(context).pop();},
               child: new Text(
                 "取消",
                 style: TextStyle(

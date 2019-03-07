@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         primaryColorLight: Theme.Colors.activecolor,
         backgroundColor: Colors.grey[300],
         accentColor: Theme.Colors.activecolor,
+        fontFamily: "PingFangSS",
       ),
       home: Center(
         child:
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
            dim: dim,
          ),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
