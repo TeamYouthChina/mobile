@@ -59,7 +59,7 @@ class _MyPageState extends State<MyPage> {
                         trailing: new Container(
                             width: 120.0,
                             child: new FlatButton(
-                                onPressed: (){
+                                onPressed: () {
                                   gotoPersonInfo(this._nickname);
                                 },
                                 child: new Row(
@@ -333,17 +333,21 @@ class _MyPageState extends State<MyPage> {
                     ),
                     new Column(
                       children: <Widget>[
-                        new Icon(
-                          Icons.shop,
-                          size: 35.0,
-                        ),
-                        new Container(
-                          height: 8.0,
-                        ),
-                        new Text(
-                          '设置',
-                          style: TextStyle(fontSize: 15.0),
-                        ),
+                        new FlatButton(onPressed: goToCyt_Setting, child: new Column(
+                          children: <Widget>[
+                            new Icon(
+                              Icons.shop,
+                              size: 35.0,
+                            ),
+                            new Container(
+                              height: 8.0,
+                            ),
+                            new Text(
+                                  '设置',
+                                  style: TextStyle(fontSize: 15.0),
+                                ),
+                          ],
+                        ))
                       ],
                     ),
                     new Column(
@@ -394,9 +398,11 @@ class _MyPageState extends State<MyPage> {
         new MaterialPageRoute(builder: (context) => new cyt_influence()));
   }
 
-  void gotoPersonInfo(String name){
-    Navigator.push(context,
-        new MaterialPageRoute(builder: (context) => new PersonInfo(name:name)));
+  void gotoPersonInfo(String name) {
+    Navigator.push(
+        context,
+        new MaterialPageRoute(
+            builder: (context) => new PersonInfo(name: name)));
   }
 
   void goToCyt_Setting() {
@@ -404,4 +410,3 @@ class _MyPageState extends State<MyPage> {
         new MaterialPageRoute(builder: (context) => new Cyt_Setting()));
   }
 }
-

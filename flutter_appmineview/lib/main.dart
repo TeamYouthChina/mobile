@@ -25,11 +25,16 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primaryColor: Colors.white,
         primaryColorLight: Theme.Colors.activecolor,
+        backgroundColor: Colors.grey[300],
+        accentColor: Theme.Colors.activecolor,
       ),
       home: Center(
-        child: LoginPage(
-          dim: dim,
-        ),
+        child:
+//        RandomWords(),
+        
+         LoginPage(
+           dim: dim,
+         ),
       ),
     );
   }

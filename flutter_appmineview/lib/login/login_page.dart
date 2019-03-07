@@ -64,6 +64,25 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
       user = "User2";
       return true;
     }
+    if (fuser == "User3") {
+      password =
+    "eJxlj1tPwjAAhd-3K5Y9G*0VwcSHyTaDFwK4IfFladZOu41R2wID439Xp8YmntfvOzk5b57v*0F693DKimKzbW1uD0oE-oUfgODkDyolec5sjjX-B0WnpBY5K63QPYSUUgSA60guWitL*WNkRmjsYMPrvN-47hMA4JAMEHEV*dzD*zgbT66r1VrV2*aJx135uuC2YLNwOBrzpr3tIE2SBh3P5NKkZBHKOOwO5vPedCUm0SiqMiaWNZ-vq8fwvI7gbB5PObxJdii9etlfOpNWrsXvIYApInjg0J3QRm7aXkAAUogw*ErgvXsfdgVduQ__";
+      user = "User3";
+      return true;
+    }
+    if (fuser == "User4") {
+      password =
+      "eJxlj1FPgzAYRd-5FYTXGfdRqFlM9oAMJ0lxIW7G*UIaWliZQG3LmFv870bUiPG*nnNzc8*WbdvOmjxc0jxvu8Zk5k1yx762HXAufqGUgmXUZJ5i-yA-SqF4RgvD1QBdjDECGDuC8caIQnwbG82VP8Ka7bNh46vvA7gz-wr9UUQ5wCRKw3jJp3HxWAXBiTAiYUHyoDvBKix36eRusSTlfVSVU3zc40MgbspeSzl5UUlDSbjqk81a*W0dv1b0dkujZ9W1qE41PO22-Xw*mjSi5j*HwMPIn40vHbjSom0GAYGLXeTBZxzr3foAMUZdvg__";      user = "User3";
+      user = "User4";
+      return true;
+    }
+//    if (fuser == "bobo") {
+//      password =
+//      "eJxlj8FOg0AURfd8xYS10ZlhUDTpAloITTAtUIxhQxhmSh9QQJhqjfHfjVQjiW97zs2970NDCOm7IL7Oi6I7tSpT773U0QPSsX71B-seRJarzBjEPyjPPQwyy-dKDhMkpmlSjOcOCNkq2MOPwTvezego6myquMQZxsRit5TNFSgn*OiGy7X90jjcMgoWN75-M4ZJ4m9Z2sTHZBtuwD3ZjsNJ-QTnOrLBDpb4YLob0VSlGqrS4x6mQLw4TdPIidar6nmlgkMZqLdysZhVKjjK33*IdX-HjPmgVzmM0LWTQDExCTXw9*nap-YFe3ZcjA__"
+//      ;
+//      user = "bobo";
+//      return true;
+//    }
     return false;
   }
 
