@@ -181,7 +181,10 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          title: new Text(_chattinguser),
+          title: new Text(
+            Convert(_chattinguser),
+            style: TextStyle(color: Theme.of(context).accentColor),
+          ),
           elevation:
               Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
         ),
@@ -215,12 +218,34 @@ class UIChatMessage extends StatelessWidget {
       {this.text, this.user, this.animationController, this.direction});
 
   final String direction;
-  final String user;
+  String user;
   final String text;
   final AnimationController animationController;
+  TextStyle headstyle;
+  TextStyle messagestyle;
+  BoxDecoration chatboxstyle;
+  EdgeInsets boxpadding;
 
   @override
   Widget build(BuildContext context) {
+    chatboxstyle = BoxDecoration(
+      color: Colors.lightBlueAccent[100],
+      borderRadius:
+//      BorderRadius.circular(10.0),
+          BorderRadius.only(
+        topLeft:
+            direction == "left" ? Radius.circular(0) : Radius.circular(12.0),
+        topRight:
+            direction == "right" ? Radius.circular(0) : Radius.circular(12.0),
+        bottomLeft: Radius.circular(12.0),
+        bottomRight: Radius.circular(12.0),
+      ),
+    );
+    headstyle = TextStyle(color: Colors.white);
+    user = Convert(user);
+    boxpadding = new EdgeInsets.all(10.0);
+    messagestyle = TextStyle(color: Colors.black);
+
     return new SizeTransition(
       sizeFactor: new CurvedAnimation(
           parent: animationController, curve: Curves.easeOut),
@@ -233,7 +258,11 @@ class UIChatMessage extends StatelessWidget {
                 children: <Widget>[
                   new Container(
                     margin: const EdgeInsets.only(right: 16.0),
-                    child: new CircleAvatar(child: new Text(user[0])),
+                    child: new CircleAvatar(
+                        child: new Text(
+                      user[0],
+                      style: headstyle,
+                    )),
                   ),
                   new Container(
                     child: new Column(
@@ -242,8 +271,14 @@ class UIChatMessage extends StatelessWidget {
                         new Text(user,
                             style: Theme.of(context).textTheme.subhead),
                         new Container(
+                          padding: boxpadding,
+                          decoration: chatboxstyle,
                           margin: const EdgeInsets.only(top: 5.0),
-                          child: new Text(text),
+                          child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 200),child: new Text(
+                            text,
+                            style: messagestyle,
+                          ),)
+                          ,
                         )
                       ],
                     ),
@@ -261,15 +296,25 @@ class UIChatMessage extends StatelessWidget {
                         new Text(user,
                             style: Theme.of(context).textTheme.subhead),
                         new Container(
+                          padding: boxpadding,
+                          decoration: chatboxstyle,
                           margin: const EdgeInsets.only(top: 5.0),
-                          child: new Text(text),
+                          child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 200), child: new Text(
+                            text,
+                            style: messagestyle,
+                          ),)
+                          ,
                         )
                       ],
                     ),
                   ),
                   new Container(
                     margin: const EdgeInsets.only(left: 16.0),
-                    child: new CircleAvatar(child: new Text(user[0])),
+                    child: new CircleAvatar(
+                        child: new Text(
+                      user[0],
+                      style: headstyle,
+                    )),
                   ),
                 ],
               ),
@@ -294,4 +339,19 @@ ChatMessageList decodenewmessage(jsonString) {
   Map<String, dynamic> parsedjson = json.decode(jsonString);
   ChatMessageList newmessagelist = new ChatMessageList.fromJson(parsedjson);
   return (newmessagelist);
+}
+
+String Convert(String str) {
+  if ((str == "User1") || (str == "齐昊")) {
+    return "齐昊";
+  } else if ((str == "User2") || (str == "郭益豪")) {
+    return "郭益豪";
+  } else if ((str == "User3") || (str == "张至诚")) {
+    return "张至诚";
+  } else if ((str == "User4") || (str == "徐泽培")) {
+    return "徐泽培";
+  } else if (str == "C2C") {
+    return "职道员工";
+  }
+  return "error";
 }

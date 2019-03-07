@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'login/login_page.dart';
 import 'package:dim/dim.dart';
 import 'package:flutter_appmineview/login/style/theme.dart' as Theme;
-import 'RandomWords.dart';
 
 void main() => runApp(MyApp());
 

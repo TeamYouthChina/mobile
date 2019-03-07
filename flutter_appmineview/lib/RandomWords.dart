@@ -66,8 +66,8 @@ class RandomWordsState extends State<RandomWords>
   final List<String> tab = ["探索", "圆桌", "消息", "我的"];
 
   final List<IconData> icons = [
-    Icons.camera,
-    Icons.important_devices,
+    Icons.explore,
+    Icons.device_hub,
     Icons.textsms,
     Icons.person
   ];
@@ -140,6 +140,7 @@ class RandomWordsState extends State<RandomWords>
 //          new IconButton(icon: new Icon(Icons.list), onPressed: null),
 //        ],
 //      ),
+
       bottomNavigationBar: new TabBar(
         indicatorColor: Colors.transparent,
         controller: _tabController,

@@ -84,10 +84,17 @@ class _ChatListState extends State<ChatList> {
               border: Border(bottom: BorderSide(color: Color(0xFFEEEEEE))),
             ),
             child: ListTile(
-              title: Text(
-//              "User2"
-                  list.conversationList[idx].peer),
-              subtitle: Text(list.conversationList[idx].type),
+              leading: Container(
+                margin: const EdgeInsets.only(right: 5.0),
+                child: new CircleAvatar(
+                  child: new Text(
+                    Convert(list.conversationList[idx].peer)[0],
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              title: Text(Convert(list.conversationList[idx].peer)),
+              subtitle: Text(Convert(list.conversationList[idx].type)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -115,7 +122,10 @@ class _ChatListState extends State<ChatList> {
     }
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("消息"),
+        title: Center(
+          child: new Text("消息",
+          style: TextStyle(color: Theme.of(context).accentColor),),
+        ),
       ),
       body: _buildchatlist(conversationList),
 //      floatingActionButton: new FloatingActionButton(
